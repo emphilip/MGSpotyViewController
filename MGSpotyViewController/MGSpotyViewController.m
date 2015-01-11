@@ -47,12 +47,12 @@ CGFloat const kMGOffsetBlurEffect = 2.0;
     [view addSubview:_mainImageView];
     
     [_overView setFrame:_mainImageView.bounds];
-    [_overView setBackgroundColor:[UIColor clearColor]];
+    [_overView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0]];
     [view addSubview:_overView];
     
     [_tableView setFrame:view.frame];
     [_tableView setShowsVerticalScrollIndicator:NO];
-    [_tableView setBackgroundColor:[UIColor clearColor]];
+    [_tableView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0]];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [view addSubview:_tableView];
@@ -129,7 +129,7 @@ CGFloat const kMGOffsetBlurEffect = 2.0;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(section == 0) {
         UIView *transparentView = [[UIView alloc] initWithFrame:_overView.bounds];
-        [transparentView setBackgroundColor:[UIColor clearColor]];
+        [transparentView setBackgroundColor:[UIColor whiteColor]];
         return transparentView;
     }
     
